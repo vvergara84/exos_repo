@@ -1,0 +1,50 @@
+POST /v1/messages
+{
+  "to": "527774506423",
+  "ttl": "P4D" | "3600" | 3600, # The "ttl" field will be deprecated in v2.35.
+  "type": "template",
+  "template": {
+        "namespace": "exos",
+        "name": "exos_pin_template",
+        "language": {
+            "code": "es_MX",
+            "policy": "deterministic"
+        },
+        "components": [{
+            "type": "body",
+            "parameters": [
+                {
+                    "type": "text",
+                    "text": "Tu codigo Voice es: {{1}}. Valido por 5 minutos."
+                },
+                {
+                    "type": "currency",
+                    "currency": {
+                        "fallback_value": "$0.99",
+                        "code": "MXN",
+                        "amount_1000": 990
+                    }
+                },
+                {
+                    "type": "date_time",
+                    "date_time" : {
+                        "fallback_value": "February 10, 2021",
+                        "day_of_week": 6,
+                        "day_of_month": 10,
+                        "year": 2021,
+                        "month": 2,
+                        "hour": 18,
+                        "minute": 05
+                    }
+                },
+                {
+                "type": "date_time",
+                    "date_time" : {
+                    "fallback_value": "February 10, 2021",
+                    "timestamp": 1613001943
+                    }
+                }
+            ]
+        }]
+    }
+}
