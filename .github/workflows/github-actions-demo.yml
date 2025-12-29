@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-on: 
+name: Manual Trigger Workflow
+on:
   workflow_dispatch:
     inputs:
       logLevel:
